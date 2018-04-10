@@ -1,0 +1,126 @@
+commit 998719722d17c2ca354a58f8b3c936243f47a58d
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:22:51 2018 +0200
+
+    vika kohta
+
+ tiedostoja/file1.txt  | 0
+ tiedostoja/file2.txt  | 0
+ tiedostoja/file22.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+commit 0287e956565d585d26796d3d9a9dd71a7d49b5b2
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:19:03 2018 +0200
+
+    uusi yritys
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3937a214f2c2d8bf3fac7c9dc9d5321f978b08dd
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:17:14 2018 +0200
+
+    hups, unohtu txt
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+commit 242e1b98a1d202afc75bc039caaca68a7e8c717c
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:11:47 2018 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 033ef70fe1f3b120c4b25062e7fc1cf2912e3452
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:06:37 2018 +0200
+
+    muutoksia
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 6672092fde2a93be814944413ff91fcb556d43ac
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:03:39 2018 +0200
+
+    nimen vaihto
+
+ eka.txt      | 12 ++++++++++++
+ tiedosto.txt | 12 ------------
+ 2 files changed, 12 insertions(+), 12 deletions(-)
+
+commit b96b6483f937282c709b9a60f85cea1656a3d273
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:01:52 2018 +0200
+
+    toinen poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit cf2071e76f8b48738686a4d3b82fa0464e5662e6
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 17:00:25 2018 +0200
+
+    pieni muutos
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 86a3beee61999014946b65f391e9074f836d1f80
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 16:59:25 2018 +0200
+
+    tiedostoon tekstiä
+
+ tiedosto.txt | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+commit 6c50ba4e1588e61b10a1ac60994947a249079501
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 16:57:40 2018 +0200
+
+    toinen ja kolmas muokattu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 11476a15c5690f3faa76ac13d75e4b28fb2ab8bf
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 16:56:24 2018 +0200
+
+    lisätty kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 52d2132c53fb82273c55ec95df3b731be9943416
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 16:55:15 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit ead0fccff2447289c2831d20ab7a314340d14c03
+Author: Hilma <hilma.holappa@hotmail.fi>
+Date:   Fri Mar 16 16:52:48 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
