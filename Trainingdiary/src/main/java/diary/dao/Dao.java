@@ -3,15 +3,13 @@ package diary.dao;
 
 import java.sql.*;
 import java.util.*;
+import diary.domain.Exercise;
 
 public interface Dao<T, K> {
 
-    T findOne(K key) throws SQLException;
+    Exercise create(Exercise ex) throws Exception;
 
-    List<T> findAll() throws SQLException;
+    List<Exercise> getAll();
 
-    void delete(K key) throws SQLException;
-    
-    void add(T o) throws SQLException;
 }
 
