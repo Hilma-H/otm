@@ -6,7 +6,7 @@ Käyttöohje
 
 [Vaatimusmäärittely](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.md)
 
-Arkkitehtuurikuvaus
+[Arkkitehtuurikuvaus](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
 
 Testausdokumentti
 
