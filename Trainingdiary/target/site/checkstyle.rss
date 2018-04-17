@@ -26,7 +26,7 @@ under the License.
     <copyright>&#169;2018</copyright>
     <item>
       <title>File: 6,
-             Errors: 6,
+             Errors: 0,
              Warnings: 0,
              Infos: 0
       </title>
@@ -55,12 +55,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  5
+                  0
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#diary.dao.FileExercise.java">diary/dao/FileExercise.java</a>
+                  <a href="${project.url}/checkstyle.html#diary.ui.DiaryService.java">diary/ui/DiaryService.java</a>
                 </td>
                 <td>
                   0
@@ -97,7 +97,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  1
+                  0
                 </td>
               </tr>
                           <tr>
@@ -116,7 +116,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#diary.domain.DiaryService.java">diary/domain/DiaryService.java</a>
+                  <a href="${project.url}/checkstyle.html#diary.dao.Database.java">diary/dao/Database.java</a>
                 </td>
                 <td>
                   0

@@ -2,20 +2,14 @@
 <checkstyle version="6.11.2">
 <file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\dao\Dao.java">
 </file>
-<file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\dao\FileExercise.java">
-</file>
-<file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\domain\DiaryService.java">
+<file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\dao\Database.java">
 </file>
 <file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\domain\Exercise.java">
-<error line="20" column="23" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="24" column="31" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="28" column="26" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="32" column="32" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="36" column="25" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 </file>
 <file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\domain\SportType.java">
 </file>
+<file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\ui\DiaryService.java">
+</file>
 <file name="C:\Users\Hilma\Desktop\otm\Trainingdiary\src\main\java\diary\ui\Main.java">
-<error line="34" column="5" severity="error" message="Method length is 49 lines (max allowed is 20)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
 </file>
 </checkstyle>

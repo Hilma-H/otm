@@ -1,5 +1,5 @@
-
 package diary.domain;
+
 /*yksittäinen harjoituskerta*/
 public class Exercise {
 
@@ -17,23 +17,23 @@ public class Exercise {
         this.date = date;
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
-    
-    public SportType getType(){
+
+    public SportType getType() {
         return this.sport;
     }
-    
-    public double getKm(){
+
+    public double getKm() {
         return this.km;
     }
-    
-    public double getDuration(){
+
+    public double getDuration() {
         return this.duration;
     }
-    
-    public int getDate(){
+
+    public int getDate() {
         return this.date;
     }
 }
