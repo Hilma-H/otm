@@ -4,7 +4,7 @@ Tarkoituksena tehdä treenipäiväkirja, johon voi kirjata omia treenejään ja 
 ## Dokumentaatio
 Käyttöohje
 
-[Vaatimusmäärittely](https://github.com/Hilma-H/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.md)
 
 Arkkitehtuurikuvaus
 
