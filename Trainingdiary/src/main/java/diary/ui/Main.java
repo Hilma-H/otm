@@ -1,5 +1,7 @@
 package diary.ui;
+
 import diary.domain.SportType;
+import diary.domain.Exercise;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -40,6 +42,8 @@ public class Main extends Application {
         layoutH.setSpacing(10);
         Button exercise = new Button("Uusi harjoitus");
         Button statistic = new Button("Harjoitukseni");
+        
+        
         layoutH.getChildren().add(exercise);
         layoutH.getChildren().add(statistic);
         
@@ -48,14 +52,20 @@ public class Main extends Application {
         ComboBox<SportType> options = new ComboBox<>();
         options.getItems().setAll(SportType.values());
         
+        TextField pvm = new TextField();
+        TextField km = new TextField();
+        TextField kesto = new TextField();
+        Button uusi = new Button("Lisää harjoitus");
+        
         layoutG.add(new Label("    Pvm    "), 1, 1);
         layoutG.add(new Label("    Laji    "), 1, 2);
         layoutG.add(new Label(" Kilometrit "), 1, 3);
         layoutG.add(new Label("   Kesto    "), 1, 4);
-        layoutG.add(new TextField(), 2, 1);
+        layoutG.add(pvm, 2, 1);
         layoutG.add(options, 2, 2);
-        layoutG.add(new TextField(), 2, 3);
-        layoutG.add(new TextField(), 2, 4);
+        layoutG.add(km, 2, 3);
+        layoutG.add(kesto, 2, 4);
+        layoutG.add(uusi, 1,5);
         
         asettelu.setTop(layoutH);
         asettelu.setCenter(layoutG);
