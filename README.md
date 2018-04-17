@@ -8,7 +8,7 @@ Tarkoituksena tehdä treenipäiväkirja, johon voi kirjata omia treenejään ja 
 
 [Arkkitehtuurikuvaus](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
 
-Testausdokumentti
+[Testausdokumentti](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Testausdokumentti.md)
 
 [Työaikakirjanpito](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
 
