@@ -10,7 +10,7 @@ Arkkitehtuurikuvaus
 
 Testausdokumentti
 
-[Työaikakirjanpito](https://github.com/Hilma-H/otm-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
+[Työaikakirjanpito](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
 
 
  
