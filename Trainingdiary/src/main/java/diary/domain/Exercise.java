@@ -9,17 +9,13 @@ public class Exercise {
     private double duration;
     private int date;
 
-    public Exercise(int id, SportType sport, double km, double duration, int date) {
-        this.id = id;
+    public Exercise( SportType sport, double km, double duration, int date) {
         this.sport = sport;
         this.km = km;
         this.duration = duration;
         this.date = date;
     }
 
-    public int getId() {
-        return this.id;
-    }
 
     public SportType getType() {
         return this.sport;

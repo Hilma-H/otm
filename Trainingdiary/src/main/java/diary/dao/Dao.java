@@ -5,11 +5,11 @@ import java.sql.*;
 import java.util.*;
 import diary.domain.Exercise;
 
-public interface Dao<T, K> {
+public interface Dao<T> {
 
-    Exercise create(Exercise ex) throws Exception;
+    void create(T e) throws Exception;
 
-    List<Exercise> getAll();
+    List<Exercise> getAll() throws SQLException;
 
 }
 

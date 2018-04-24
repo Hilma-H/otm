@@ -1,5 +1,5 @@
 /*
- * 
+ * Exercise, DiaryService ja SportType luokan testit
  */
 package diaryapp.domain;
 
@@ -30,17 +30,13 @@ public class DiaryTest {
     
     @Before
     public void setUp() {
-        exe = new Exercise(5, type.JUOKSU , 10.5, 60, 17042018);
+        exe = new Exercise( type.JUOKSU , 10.5, 60, 17042018);
     }
     
     @After
     public void tearDown() {
     }
 
-    @Test
-    public void getIdWorks() {
-        assertEquals(5, exe.getId());
-    }
     
     @Test
     public void getTypeWorks() {
