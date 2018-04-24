@@ -75,9 +75,15 @@ public class Main extends Application {
             try {
                 service.saveExercise(e);
                 //jos onnistui niin tyhjentää kentät?
+                System.out.println("Onnistui");
+                
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            pvm.clear();
+            km.clear();
+            kesto.clear();
+            options.setValue(null);
         });
 
         exercise.setOnAction((event) -> {

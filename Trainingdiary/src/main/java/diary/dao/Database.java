@@ -21,22 +21,24 @@ public class Database implements Dao<Exercise> {
         return DriverManager.getConnection(databaseAddress);
     }
 
-    public void init() {
-        String lause = "IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Harjoitus' AND xtype='U')"
-                + "CREATE TABLE Harjoitus "
-                + "(id integer PRIMARY KEY, laji varchar(20), km float , kesto float, pvm integer)GO";
+    public String init() {
+        String lause = "CREATE TABLE Harjoitus "
+                + "(id integer PRIMARY KEY, laji varchar(20), km float , kesto float, pvm integer)";
 
         // "try with resources" sulkee resurssin automaattisesti lopuksi
         try (Connection conn = getConnection()) {
             Statement st = conn.createStatement();
 
-            System.out.println("Running command >> " + lause);
+            // suoritetaan komennot
+            System.out.println("Running command" + lause);
             st.executeUpdate(lause);
-
+            return "success";
         } catch (Throwable t) {
             // jos tietokantataulu on jo olemassa, ei komentoja suoriteta
             System.out.println("Error >> " + t.getMessage());
+            return "not";
         }
+        
     }
 
     @Override
@@ -55,7 +57,7 @@ public class Database implements Dao<Exercise> {
         connection.close();
     }
 
-  /*  @Override
+    @Override
       public List<Exercise> getAll() throws SQLException {
         //int id, SportType sport, double km, double duration, int date
         Connection connection = getConnection();
@@ -77,12 +79,9 @@ public class Database implements Dao<Exercise> {
         connection.close();
 
         return exercises;
-    } */
-
-    @Override
-    public List<Exercise> getAll() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
 
 }

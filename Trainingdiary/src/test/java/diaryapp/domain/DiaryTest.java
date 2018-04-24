@@ -40,8 +40,7 @@ public class DiaryTest {
     
     @Test
     public void getTypeWorks() {
-        SportType s = null;
-        
+        SportType s = null;       
         assertEquals(s.JUOKSU, exe.getType());
     }
     
