@@ -9,4 +9,5 @@
 | 17.4. | 5    | arkkitehtuurikuvaus |
 | 23.4. | 3    | tietokannan koodausta |
 | 24.4.| 5    | tietokanta, jar, sekvenssikaavio |
-| yht   | 23   | | 
+| 25.4.| 4    | Treenien näkyminen |
+| yht   | 27   | | 
