@@ -12,7 +12,7 @@ Tarkoituksena tehdä treenipäiväkirja, johon voi kirjata omia treenejään ja 
 
 [Työaikakirjanpito](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
 
-
+[GitHub release](https://github.com/Hilma-H/otm/releases/tag/viikko5)
  
  
 
