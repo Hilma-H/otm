@@ -14,6 +14,8 @@ import diary.dao.Database;
 import diary.domain.Exercise;
 import diary.domain.SportType;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DiaryService {
 
@@ -35,8 +37,11 @@ public class DiaryService {
         data.create(e);
     }
 
-    public void viewAll() throws SQLException {
-        //hakee metodeilla kaikki harjoitukset ja näyttää ne järkevästi
-        data.getAll();
+    public List<Exercise> viewAll() throws SQLException {
+        //hakee kaikki harjoitukset
+        if (data.getAll() == null) {
+            return new ArrayList<>();
+        }
+        return data.getAll();
     }
 }

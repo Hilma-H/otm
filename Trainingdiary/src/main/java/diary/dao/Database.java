@@ -66,12 +66,12 @@ public class Database implements Dao<Exercise> {
         ResultSet rs = stmt.executeQuery();
         List<Exercise> exercises = new ArrayList<>();
         while (rs.next()) {
-            SportType type = SportType.valueOf(rs.getNString("laji"));
+            String type = rs.getString("laji");
             Double km = rs.getDouble("km");
             Double duration = rs.getDouble("kesto");
             Integer date = rs.getInt("pvm");
 
-            exercises.add(new Exercise( type, km, duration, date));
+            exercises.add(new Exercise(SportType.valueOf(type), km, duration, date));
         }
 
         rs.close();

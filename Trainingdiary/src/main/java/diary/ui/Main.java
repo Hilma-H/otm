@@ -4,6 +4,8 @@ import diary.domain.SportType;
 import diary.domain.Exercise;
 import diary.domain.DiaryService;
 import java.io.FileInputStream;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,9 +16,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -24,25 +32,56 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    private DiaryService service;
     private Scene newExercise;
     private Scene viewExercises;
+    private Scene statistics;
+    private VBox eList;
 
+    public Node createExerciseNode(Exercise done) {
+        HBox box = new HBox(10);
+        Label label  = new Label(done.getContent());
+        label.setMinHeight(28);
+        box.setPadding(new Insets(0,5,0,5));
+        box.getChildren().addAll(label);
+        return box;
+    }
+    
+    public void redrawlist() throws SQLException {
+        eList.getChildren().clear();
+
+        List<Exercise> exList = service.viewAll();
+        exList.forEach(exe -> {
+            eList.getChildren().add(createExerciseNode(exe));
+        });
+    }
 
     @Override
-    public void start(Stage primaryStage) throws ClassNotFoundException {
+    public void init() throws ClassNotFoundException{
+        service = new DiaryService();
+        service.createTable();
+    }
+    
+    @Override
+    public void start(Stage primaryStage) throws ClassNotFoundException, SQLException {
+        
         //New Exercise
         BorderPane asettelu = new BorderPane();
 
         HBox layoutH = new HBox();
         layoutH.setSpacing(10);
-        Button exercise = new Button("Uusi harjoitus");
-        Button statistic = new Button("Harjoitukseni");
 
-        layoutH.getChildren().add(exercise);
-        layoutH.getChildren().add(statistic);
+        Button newExe = new Button("Uusi harjoitus");
+        Button exe = new Button("Harjoitukseni");
+        Button sta = new Button("Tilastoja");
+
+        layoutH.getChildren().add(newExe);
+        layoutH.getChildren().add(exe);
+        layoutH.getChildren().add(sta);
 
         GridPane layoutG = new GridPane();
+        layoutG.setHgap(60);
+        layoutG.setVgap(10);
 
         ComboBox<SportType> options = new ComboBox<>();
         options.getItems().setAll(SportType.values());
@@ -52,10 +91,10 @@ public class Main extends Application {
         TextField kesto = new TextField();
         Button uusi = new Button("Lisää harjoitus");
 
-        layoutG.add(new Label("    Pvm (integer)   "), 1, 1);
-        layoutG.add(new Label("    Laji    "), 1, 2);
-        layoutG.add(new Label(" Kilometrit (double)"), 1, 3);
-        layoutG.add(new Label("   Kesto  (double)  "), 1, 4);
+        layoutG.add(new Label("     Pvm (ppmmvv)     "), 1, 1);
+        layoutG.add(new Label("        Laji          "), 1, 2);
+        layoutG.add(new Label("Kilometrit (double km)"), 1, 3);
+        layoutG.add(new Label("    Kesto (douple h)  "), 1, 4);
         layoutG.add(pvm, 2, 1);
         layoutG.add(options, 2, 2);
         layoutG.add(km, 2, 3);
@@ -65,60 +104,115 @@ public class Main extends Application {
         asettelu.setTop(layoutH);
         asettelu.setCenter(layoutG);
 
-        DiaryService service = new DiaryService();
-        service.createTable();
+
 
         uusi.setOnAction((event) -> {
             //int id, enum laji, double km, double kesto, string pvm
-            Exercise e = new Exercise( options.getValue(), Double.parseDouble(km.getText()),
+            Exercise e = new Exercise(options.getValue(), Double.parseDouble(km.getText()),
                     Double.parseDouble(kesto.getText()), Integer.parseInt(pvm.getText()));
             try {
                 service.saveExercise(e);
-                //jos onnistui niin tyhjentää kentät?
+                pvm.clear();
+                km.clear();
+                kesto.clear();
+                options.setValue(null);
+                redrawlist();
                 System.out.println("Onnistui");
-                
+
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
-            pvm.clear();
-            km.clear();
-            kesto.clear();
-            options.setValue(null);
+            
         });
 
-        exercise.setOnAction((event) -> {
+        newExe.setOnAction((event) -> {
             primaryStage.setScene(newExercise);
             System.out.println("uusi");
         });
 
-        statistic.setOnAction((event) -> {
+        exe.setOnAction((event) -> {
             primaryStage.setScene(viewExercises);
             System.out.println("tilastot");
+        });
+
+        sta.setOnAction((event) -> {
+            primaryStage.setScene(viewExercises);
+            System.out.println("harjoitukseni");
         });
 
         newExercise = new Scene(asettelu, 500, 400);
 
         //View exercises
+        ScrollPane eScroll = new ScrollPane();
+        BorderPane pane = new BorderPane(eScroll);
+
         HBox layout2 = new HBox();
         layout2.setSpacing(10);
-        Button exercise2 = new Button("Uusi harjoitus");
-        Button statistic2 = new Button("Harjoitukseni");
 
-        layout2.getChildren().add(exercise2);
-        layout2.getChildren().add(statistic2);
+        eList = new VBox(10);
+        eList.setMaxHeight(280);
+        eList.setMaxHeight(280);
+        redrawlist();
 
-        exercise2.setOnAction((event) -> {
+        eScroll.setContent(eList);
+
+        pane.setTop(layout2);
+        pane.setCenter(eList);
+
+        Button newExe2 = new Button("Uusi harjoitus");
+        Button exe2 = new Button("Harjoitukseni");
+        Button sta2 = new Button("Tilastoja");
+
+        layout2.getChildren().add(newExe2);
+        layout2.getChildren().add(exe2);
+        layout2.getChildren().add(sta2);
+
+        newExe2.setOnAction((event) -> {
             primaryStage.setScene(newExercise);
             System.out.println("uusi");
         });
 
-        statistic2.setOnAction((event) -> {
+        exe2.setOnAction((event) -> {
             primaryStage.setScene(viewExercises);
+            System.out.println("harjoitukseni");
+        });
+
+        sta2.setOnAction((event) -> {
+            primaryStage.setScene(statistics);
             System.out.println("tilastot");
         });
 
         //tilastoja diaryserviseltä jossain järkevässä muodossa
-        viewExercises = new Scene(layout2, 300, 250);
+        viewExercises = new Scene(pane, 500, 400);
+
+        //Statistics
+        HBox layout3 = new HBox();
+        layout3.setSpacing(10);
+        Button newExe3 = new Button("Uusi harjoitus");
+        Button exe3 = new Button("Harjoitukseni");
+        Button sta3 = new Button("Tilastoja");
+        layout3.getChildren().add(newExe3);
+        layout3.getChildren().add(exe3);
+        layout3.getChildren().add(sta3);
+
+        newExe3.setOnAction((event) -> {
+            primaryStage.setScene(newExercise);
+            System.out.println("uusi");
+        });
+
+        exe3.setOnAction((event) -> {
+            primaryStage.setScene(viewExercises);
+            System.out.println("harjoitukseni");
+        });
+
+        sta3.setOnAction((event) -> {
+            primaryStage.setScene(statistics);
+            System.out.println("tilastot");
+        });
+
+        //treenikilometrit
+        //käytetty aika
+        statistics = new Scene(layout3, 500, 400);
 
         // Primary stage
         primaryStage.setTitle("Harjoituspäiväkirja");

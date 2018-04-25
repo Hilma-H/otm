@@ -59,4 +59,9 @@ public class DiaryTest {
         assertEquals(17042018, exe.getDate());
     }
     
+    @Test
+    public void getContentWorks(){
+        assertEquals("17042018, JUOKSU, 10.5, 60.0", exe.getContent());
+    }
+    
 }

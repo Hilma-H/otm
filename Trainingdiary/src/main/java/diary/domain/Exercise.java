@@ -32,4 +32,9 @@ public class Exercise {
     public int getDate() {
         return this.date;
     }
+    
+    public String getContent(){
+        return String.valueOf(this.date) + ", " + this.sport.toString() + ", " + 
+                String.valueOf(km) + ", " + String.valueOf(this.duration);
+    }
 }
