@@ -6,7 +6,7 @@ Tarkoituksena tehdä treenipäiväkirja, johon voi kirjata omia treenejään ja 
 
 [Vaatimusmäärittely](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.md)
 
-[Arkkitehtuurikuvaus](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Pakkauskaavio%20-%20(1).jpg)
+[Arkkitehtuurikuvaus](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
 
 [Testausdokumentti](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Testausdokumentti.md)
 
