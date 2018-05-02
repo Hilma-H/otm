@@ -10,4 +10,5 @@
 | 23.4. | 3    | tietokannan koodausta |
 | 24.4.| 5    | tietokanta, jar, sekvenssikaavio |
 | 25.4.| 4    | Treenien näkyminen |
+| 2.5. | ? | Scrollbar, tilastot ja dokumentointi |
 | yht   | 27   | | 
