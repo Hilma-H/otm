@@ -38,7 +38,7 @@ public class Database implements Dao<Exercise> {
             System.out.println("Error >> " + t.getMessage());
             return "not";
         }
-        
+
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Database implements Dao<Exercise> {
     }
 
     @Override
-      public List<Exercise> getAll() throws SQLException {
+    public List<Exercise> getAll() throws SQLException {
         //int id, SportType sport, double km, double duration, int date
         Connection connection = getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Harjoitus");
@@ -81,7 +81,32 @@ public class Database implements Dao<Exercise> {
         return exercises;
     }
 
-    
+    public Double getKm() throws SQLException {
+        Connection connection = getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT SUM(km) FROM Harjoitus");
 
+        ResultSet rs = stmt.executeQuery();
+        Double kilometers = rs.getDouble("SUM(km)");
+
+        rs.close();
+        stmt.close();
+        connection.close();
+
+        return kilometers;
+    }
+
+    public Double getDuration() throws SQLException {
+        Connection connection = getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT SUM(kesto) FROM Harjoitus");
+
+        ResultSet rs = stmt.executeQuery();
+        Double duration = rs.getDouble("SUM(kesto)");
+
+        rs.close();
+        stmt.close();
+        connection.close();
+
+        return duration;
+    }
 
 }

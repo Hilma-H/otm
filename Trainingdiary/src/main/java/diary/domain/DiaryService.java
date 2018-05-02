@@ -44,4 +44,20 @@ public class DiaryService {
         }
         return data.getAll();
     }
+
+    public Double getKm() throws SQLException {
+        double k = 0;
+        if (data.getKm() == null) {
+            return k;
+        }
+        return data.getKm();
+    }
+
+    public Double getDurat() throws SQLException {
+        double k = 0;
+        if (data.getDuration() == null) {
+            return k;
+        }
+        return data.getDuration();
+    }
 }

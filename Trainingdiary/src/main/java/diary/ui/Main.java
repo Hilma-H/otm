@@ -132,12 +132,12 @@ public class Main extends Application {
 
         exe.setOnAction((event) -> {
             primaryStage.setScene(viewExercises);
-            System.out.println("tilastot");
+            System.out.println("harjoitukseni");
         });
 
         sta.setOnAction((event) -> {
-            primaryStage.setScene(viewExercises);
-            System.out.println("harjoitukseni");
+            primaryStage.setScene(statistics);
+            System.out.println("tilastot");
         });
 
         newExercise = new Scene(asettelu, 500, 400);
@@ -150,14 +150,14 @@ public class Main extends Application {
         layout2.setSpacing(10);
 
         eList = new VBox(10);
-        eList.setMaxHeight(280);
-        eList.setMaxHeight(280);
+        eList.setMaxHeight(100);
+        eList.setMaxWidth(280);
         redrawlist();
 
         eScroll.setContent(eList);
 
         pane.setTop(layout2);
-        pane.setCenter(eList);
+        pane.setCenter(eScroll);
 
         Button newExe2 = new Button("Uusi harjoitus");
         Button exe2 = new Button("Harjoitukseni");
@@ -186,6 +186,7 @@ public class Main extends Application {
         viewExercises = new Scene(pane, 500, 400);
 
         //Statistics
+        BorderPane pane2 = new BorderPane();
         HBox layout3 = new HBox();
         layout3.setSpacing(10);
         Button newExe3 = new Button("Uusi harjoitus");
@@ -211,8 +212,17 @@ public class Main extends Application {
         });
 
         //treenikilometrit
+        VBox layout4 = new VBox();
+        layout4.setSpacing(10);
+        Label kilometers = new Label("Kilometreja yhteensä: " + service.getKm() + " kilometriä");
+        layout4.getChildren().add(kilometers);
         //käytetty aika
-        statistics = new Scene(layout3, 500, 400);
+        Label duration = new Label("Harjoitusten kesto yhteensä: " + service.getDurat() + " tuntia");
+        layout4.getChildren().add(duration);
+        pane2.setTop(layout3);
+        pane2.setLeft(layout4);
+        
+        statistics = new Scene(pane2, 500, 400);
 
         // Primary stage
         primaryStage.setTitle("Harjoituspäiväkirja");
