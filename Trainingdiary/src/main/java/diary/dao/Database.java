@@ -1,8 +1,8 @@
-/*
- * 
- */
 package diary.dao;
 
+/**
+ * Luokka vastaa SQL tietokannasta
+ */
 import diary.domain.Exercise;
 import diary.domain.SportType;
 import java.sql.*;
@@ -13,14 +13,27 @@ public class Database implements Dao<Exercise> {
 
     private String databaseAddress;
 
+    /**
+     * Perustaa tietokantaolion
+     * @param databaseAddress
+     * @throws ClassNotFoundException
+     */
     public Database(String databaseAddress) throws ClassNotFoundException {
         this.databaseAddress = databaseAddress;
     }
 
+    /**
+     * Yhdistää tietokannan
+     * @return @throws SQLException
+     */
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(databaseAddress);
     }
 
+    /**
+     * Luo tietokantaan Harjoitus -taulun
+     * @return
+     */
     public String init() {
         String lause = "CREATE TABLE Harjoitus "
                 + "(id integer PRIMARY KEY, laji varchar(20), km float , kesto float, pvm integer)";
@@ -41,6 +54,11 @@ public class Database implements Dao<Exercise> {
 
     }
 
+    /**
+     * Tallentaa tietokantaan harjoituksen, jonka parametrit exercise oliolta
+     * @param e
+     * @throws Exception
+     */
     @Override
     public void create(Exercise e) throws Exception {
         //int id, SportType sport, double km, double duration, int date
@@ -57,6 +75,11 @@ public class Database implements Dao<Exercise> {
         connection.close();
     }
 
+    /**
+     * Hakee kaikki tietokanna harjoitukset ja tekee niistä listan
+     * @return lista kaikista harjoituksista (Exercise olioita)
+     * @throws SQLException
+     */
     @Override
     public List<Exercise> getAll() throws SQLException {
         //int id, SportType sport, double km, double duration, int date
@@ -81,6 +104,11 @@ public class Database implements Dao<Exercise> {
         return exercises;
     }
 
+    /**
+     * Hakee kaikkien harjoitusten kilometrimäärän ja summaa ne
+     * @return kilometrimäärä yhteensä
+     * @throws SQLException
+     */
     public Double getKm() throws SQLException {
         Connection connection = getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT SUM(km) FROM Harjoitus");
@@ -95,6 +123,11 @@ public class Database implements Dao<Exercise> {
         return kilometers;
     }
 
+    /**
+     * Hakee kaikkien harjoitusten keston ja summaa ne
+     * @return kesto yhteensä
+     * @throws SQLException
+     */
     public Double getDuration() throws SQLException {
         Connection connection = getConnection();
         PreparedStatement stmt = connection.prepareStatement("SELECT SUM(kesto) FROM Harjoitus");
