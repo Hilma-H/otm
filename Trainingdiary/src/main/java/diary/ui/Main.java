@@ -41,17 +41,19 @@ public class Main extends Application {
     public Node createExerciseNode(Exercise done) {
         HBox box = new HBox(10);
         Label label  = new Label(done.getContent());
+        Button dele = new Button("Poista");
         label.setMinHeight(28);
         box.setPadding(new Insets(0,5,0,5));
         box.getChildren().addAll(label);
+        box.getChildren().addAll(dele);
         return box;
     }
     
     public void redrawlist() throws SQLException {
         eList.getChildren().clear();
 
-        List<Exercise> exList = service.viewAll();
-        exList.forEach(exe -> {
+        List<Exercise> exeList = service.viewAll();
+        exeList.forEach(exe -> {
             eList.getChildren().add(createExerciseNode(exe));
         });
     }
@@ -66,58 +68,47 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws ClassNotFoundException, SQLException {
         
         //New Exercise
-        BorderPane asettelu = new BorderPane();
-
-        HBox layoutH = new HBox();
-        layoutH.setSpacing(10);
-
+        GridPane layoutG = new GridPane();
+        layoutG.setHgap(15);
+        layoutG.setVgap(10);
+        
         Button newExe = new Button("Uusi harjoitus");
         Button exe = new Button("Harjoitukseni");
         Button sta = new Button("Tilastoja");
-
-        layoutH.getChildren().add(newExe);
-        layoutH.getChildren().add(exe);
-        layoutH.getChildren().add(sta);
-
-        GridPane layoutG = new GridPane();
-        layoutG.setHgap(60);
-        layoutG.setVgap(10);
-
+        Button addExe = new Button("Lisää harjoitus");
+        
         ComboBox<SportType> options = new ComboBox<>();
         options.getItems().setAll(SportType.values());
 
         TextField pvm = new TextField();
         TextField km = new TextField();
-        TextField kesto = new TextField();
-        Button uusi = new Button("Lisää harjoitus");
-
-        layoutG.add(new Label("     Pvm (ppmmvv)     "), 1, 1);
-        layoutG.add(new Label("        Laji          "), 1, 2);
-        layoutG.add(new Label("Kilometrit (double km)"), 1, 3);
-        layoutG.add(new Label("    Kesto (douple h)  "), 1, 4);
-        layoutG.add(pvm, 2, 1);
-        layoutG.add(options, 2, 2);
-        layoutG.add(km, 2, 3);
-        layoutG.add(kesto, 2, 4);
-        layoutG.add(uusi, 1, 5);
-
-        asettelu.setTop(layoutH);
-        asettelu.setCenter(layoutG);
-
+        TextField durat = new TextField();
+        
+        layoutG.add(newExe, 1, 1);
+        layoutG.add(exe, 2, 1);
+        layoutG.add(sta, 3, 1);
+        layoutG.add(new Label("Pvm (ppmmvv)"), 1, 2);
+        layoutG.add(new Label("Laji"), 1, 3);
+        layoutG.add(new Label("Kilometrit (double km)"), 1, 4);
+        layoutG.add(new Label("Kesto (douple h)"), 1, 5);
+        layoutG.add(pvm, 2, 2);
+        layoutG.add(options, 2, 3);
+        layoutG.add(km, 2, 4);
+        layoutG.add(durat, 2, 5);
+        layoutG.add(addExe, 2, 6);
 
 
-        uusi.setOnAction((event) -> {
+        addExe.setOnAction((event) -> {
             //int id, enum laji, double km, double kesto, string pvm
             Exercise e = new Exercise(options.getValue(), Double.parseDouble(km.getText()),
-                    Double.parseDouble(kesto.getText()), Integer.parseInt(pvm.getText()));
+                    Double.parseDouble(durat.getText()), Integer.parseInt(pvm.getText()));
             try {
                 service.saveExercise(e);
                 pvm.clear();
                 km.clear();
-                kesto.clear();
+                durat.clear();
                 options.setValue(null);
                 redrawlist();
-                System.out.println("Onnistui");
 
             } catch (Exception ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,24 +118,22 @@ public class Main extends Application {
 
         newExe.setOnAction((event) -> {
             primaryStage.setScene(newExercise);
-            System.out.println("uusi");
         });
 
         exe.setOnAction((event) -> {
             primaryStage.setScene(viewExercises);
-            System.out.println("harjoitukseni");
         });
 
         sta.setOnAction((event) -> {
             primaryStage.setScene(statistics);
-            System.out.println("tilastot");
         });
 
-        newExercise = new Scene(asettelu, 500, 400);
+        newExercise = new Scene(layoutG, 500, 400);
 
         //View exercises
         ScrollPane eScroll = new ScrollPane();
-        BorderPane pane = new BorderPane(eScroll);
+        BorderPane pane2 = new BorderPane(eScroll);
+        GridPane layoutH = new GridPane();
 
         HBox layout2 = new HBox();
         layout2.setSpacing(10);
@@ -156,8 +145,8 @@ public class Main extends Application {
 
         eScroll.setContent(eList);
 
-        pane.setTop(layout2);
-        pane.setCenter(eScroll);
+        pane2.setTop(layout2);
+        pane2.setCenter(eScroll);
 
         Button newExe2 = new Button("Uusi harjoitus");
         Button exe2 = new Button("Harjoitukseni");
@@ -169,24 +158,20 @@ public class Main extends Application {
 
         newExe2.setOnAction((event) -> {
             primaryStage.setScene(newExercise);
-            System.out.println("uusi");
         });
 
         exe2.setOnAction((event) -> {
             primaryStage.setScene(viewExercises);
-            System.out.println("harjoitukseni");
         });
 
         sta2.setOnAction((event) -> {
             primaryStage.setScene(statistics);
-            System.out.println("tilastot");
         });
 
-        //tilastoja diaryserviseltä jossain järkevässä muodossa
-        viewExercises = new Scene(pane, 500, 400);
+        viewExercises = new Scene(pane2, 500, 400);
 
         //Statistics
-        BorderPane pane2 = new BorderPane();
+        BorderPane pane3 = new BorderPane();
         HBox layout3 = new HBox();
         layout3.setSpacing(10);
         Button newExe3 = new Button("Uusi harjoitus");
@@ -198,17 +183,14 @@ public class Main extends Application {
 
         newExe3.setOnAction((event) -> {
             primaryStage.setScene(newExercise);
-            System.out.println("uusi");
         });
 
         exe3.setOnAction((event) -> {
             primaryStage.setScene(viewExercises);
-            System.out.println("harjoitukseni");
         });
 
         sta3.setOnAction((event) -> {
             primaryStage.setScene(statistics);
-            System.out.println("tilastot");
         });
 
         //treenikilometrit
@@ -219,10 +201,10 @@ public class Main extends Application {
         //käytetty aika
         Label duration = new Label("Harjoitusten kesto yhteensä: " + service.getDurat() + " tuntia");
         layout4.getChildren().add(duration);
-        pane2.setTop(layout3);
-        pane2.setLeft(layout4);
+        pane3.setTop(layout3);
+        pane3.setLeft(layout4);
         
-        statistics = new Scene(pane2, 500, 400);
+        statistics = new Scene(pane3, 500, 400);
 
         // Primary stage
         primaryStage.setTitle("Harjoituspäiväkirja");

@@ -22,6 +22,7 @@ public class DiaryService {
 
     /**
      * Määrittelee tietokannan
+     *
      * @throws ClassNotFoundException
      */
     public DiaryService() throws ClassNotFoundException {
@@ -38,6 +39,7 @@ public class DiaryService {
 
     /**
      * Tallentaa harjoituksen tietokantaan
+     *
      * @param e
      * @throws Exception
      */
@@ -48,7 +50,9 @@ public class DiaryService {
     }
 
     /**
-     * Listaa kaikki tietokannan harjoitukset ja jos niitä ei ole palauttaa tyhjä listan
+     * Listaa kaikki tietokannan harjoitukset ja jos niitä ei ole palauttaa
+     * tyhjä listan
+     *
      * @return listan, jossa kaikki harjoitukset tai tyhjän listan
      * @throws SQLException
      */
@@ -62,26 +66,27 @@ public class DiaryService {
 
     /**
      * laskee summan harjoituksien kilometreista
-     * @return summan harjoitusten kilometreistä tai nollan jos harjoituksia ei ole
+     *
+     * @return summan harjoitusten kilometreistä tai nollan jos harjoituksia ei
+     * ole
      * @throws SQLException
      */
     public Double getKm() throws SQLException {
-        double k = 0;
         if (data.getKm() == null) {
-            return k;
+            return 0.0;
         }
         return data.getKm();
     }
 
     /**
      * laskee harjoitusten yhteiskeston
+     *
      * @return harjoituksen kestot yhteensä tai nollan jos niitä ei ole
      * @throws SQLException
      */
     public Double getDurat() throws SQLException {
-        double k = 0;
         if (data.getDuration() == null) {
-            return k;
+            return 0.0;
         }
         return data.getDuration();
     }

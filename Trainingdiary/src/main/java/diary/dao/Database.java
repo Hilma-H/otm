@@ -35,7 +35,7 @@ public class Database implements Dao<Exercise> {
      * @return
      */
     public String init() {
-        String lause = "CREATE TABLE Harjoitus "
+        String createTable = "CREATE TABLE Harjoitus "
                 + "(id integer PRIMARY KEY, laji varchar(20), km float , kesto float, pvm integer)";
 
         // "try with resources" sulkee resurssin automaattisesti lopuksi
@@ -43,8 +43,8 @@ public class Database implements Dao<Exercise> {
             Statement st = conn.createStatement();
 
             // suoritetaan komennot
-            System.out.println("Running command" + lause);
-            st.executeUpdate(lause);
+            System.out.println("Running command" + createTable);
+            st.executeUpdate(createTable);
             return "success";
         } catch (Throwable t) {
             // jos tietokantataulu on jo olemassa, ei komentoja suoriteta
