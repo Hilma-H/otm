@@ -14,5 +14,5 @@
 | 3.5 | (2) | (Koodikatselmointi)|
 | 7.5 | 3 | Käyttöliittymän muutoksia ja virheidenkorjausta|
 | 10.5 | 1 | Loppupalautuksen vaatimuksien läpikäyntiä|
-| 11.5 | x | Loppupalautus|
-| yht   | 37(39)   | | 
+| 11.5 | 6 | Loppupalautus|
+| yht   | 43(45)   | | 
