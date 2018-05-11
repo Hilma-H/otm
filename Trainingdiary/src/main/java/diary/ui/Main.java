@@ -3,10 +3,8 @@ package diary.ui;
 import diary.domain.SportType;
 import diary.domain.Exercise;
 import diary.domain.DiaryService;
-import java.io.FileInputStream;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,8 +22,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -146,7 +142,7 @@ public class Main extends Application {
         layoutG.add(pvmCheck, 3, 2);
         layoutG.add(kmCheck, 3, 4);
         layoutG.add(duratCheck, 3, 5);
-        
+
         addExe.setOnAction((event) -> {
             //int id, enum laji, double km, double kesto, string pvm
             Exercise e = new Exercise(options.getValue(), Double.parseDouble(km.getText()),
