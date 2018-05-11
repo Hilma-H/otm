@@ -25,7 +25,7 @@ Päätoiminnallisuudet kuvattu sekvenssikaavioilla.
 
 ### Harjoituksen luominen  
 ![alttext](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Harjoituksen%20luominen.png)
-### Tilastot  
+### Harjoituksen poistaminen  
 ![alttext](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Harjoituksen%20poistaminen.png)
 ## Puutteita/työn alla
 - päivämäärän tallennus järkevämmin  
