@@ -22,10 +22,8 @@ Ohjelman harjoitukset tallennetaan (ohjelman luomaan) paikalliseen  tietokantaan
 (PK id integer, laji varchar(20), km float, kesto float, pvm integer)
 ## Päätoiminnallisuudet
 Päätoiminnallisuudet kuvattu sekvenssikaavioilla.
-
-### Harjoituksen luominen  
+ 
 ![alttext](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Harjoituksen%20luominen.png)
-### Harjoituksen poistaminen  
 ![alttext](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Harjoituksen%20poistaminen.png)
 ## Puutteita/työn alla
 - päivämäärän tallennus järkevämmin  
