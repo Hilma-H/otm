@@ -30,7 +30,7 @@ public class DiaryTest {
     
     @Before
     public void setUp() {
-        exe = new Exercise( type.JUOKSU , 10.5, 60, 17042018);
+        exe = new Exercise(2, type.JUOKSU , 10.5, 60, 17042018);
     }
     
     @After
@@ -57,6 +57,11 @@ public class DiaryTest {
     @Test
     public void getDateWorks() {
         assertEquals(17042018, exe.getDate());
+    }
+    
+    @Test
+    public void getIdWorks(){
+        assertEquals(2,exe.getId());
     }
     
     @Test

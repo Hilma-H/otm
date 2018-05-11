@@ -15,6 +15,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Perustaa tietokantaolion
+     *
      * @param databaseAddress
      * @throws ClassNotFoundException
      */
@@ -24,6 +25,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Yhdistää tietokannan
+     *
      * @return @throws SQLException
      */
     public Connection getConnection() throws SQLException {
@@ -32,6 +34,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Luo tietokantaan Harjoitus -taulun
+     *
      * @return
      */
     public String init() {
@@ -43,12 +46,10 @@ public class Database implements Dao<Exercise> {
             Statement st = conn.createStatement();
 
             // suoritetaan komennot
-            System.out.println("Running command" + createTable);
             st.executeUpdate(createTable);
             return "success";
         } catch (Throwable t) {
             // jos tietokantataulu on jo olemassa, ei komentoja suoriteta
-            System.out.println("Error >> " + t.getMessage());
             return "not";
         }
 
@@ -56,6 +57,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Tallentaa tietokantaan harjoituksen, jonka parametrit exercise oliolta
+     *
      * @param e
      * @throws Exception
      */
@@ -77,6 +79,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Hakee kaikki tietokanna harjoitukset ja tekee niistä listan
+     *
      * @return lista kaikista harjoituksista (Exercise olioita)
      * @throws SQLException
      */
@@ -89,12 +92,13 @@ public class Database implements Dao<Exercise> {
         ResultSet rs = stmt.executeQuery();
         List<Exercise> exercises = new ArrayList<>();
         while (rs.next()) {
+            Integer id = rs.getInt("id");
             String type = rs.getString("laji");
             Double km = rs.getDouble("km");
             Double duration = rs.getDouble("kesto");
             Integer date = rs.getInt("pvm");
 
-            exercises.add(new Exercise(SportType.valueOf(type), km, duration, date));
+            exercises.add(new Exercise(id, SportType.valueOf(type), km, duration, date));
         }
 
         rs.close();
@@ -106,6 +110,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Hakee kaikkien harjoitusten kilometrimäärän ja summaa ne
+     *
      * @return kilometrimäärä yhteensä
      * @throws SQLException
      */
@@ -125,6 +130,7 @@ public class Database implements Dao<Exercise> {
 
     /**
      * Hakee kaikkien harjoitusten keston ja summaa ne
+     *
      * @return kesto yhteensä
      * @throws SQLException
      */
@@ -142,4 +148,14 @@ public class Database implements Dao<Exercise> {
         return duration;
     }
 
+    public void delete(int id) throws SQLException {
+        Connection connection = getConnection();
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM Harjoitus WHERE id = ?");
+        stmt.setInt(1, id);
+
+        stmt.executeUpdate();
+        stmt.close();
+        connection.close();
+
+    }
 }

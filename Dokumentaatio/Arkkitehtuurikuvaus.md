@@ -27,8 +27,6 @@ Päätoiminnallisuudet kuvattu sekvenssikaavioilla.
 ### Tilastot (kuva sekvenssikaavioista)
 ## Puutteita/työn alla
 - päivämäärän tallennus järkevämmin  
-- kentät sallisivat myös tyhjäksi jättämisen (ainakin km)  
-- harjoitusten poistaminen yksittäin
-- kenttien täytön seuraaminen joka varmistaisi, että täytetty oikein (double/integer)
+- kentät sallisivat myös tyhjäksi jättämisen (ainakin km)
 ## Heikkoudet
 Käyttöliittymä kokonaan start:issa

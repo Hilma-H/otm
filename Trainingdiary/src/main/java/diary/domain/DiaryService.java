@@ -3,15 +3,11 @@ package diary.domain;
 /**
  *
  */
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
 import diary.dao.Database;
 import diary.domain.Exercise;
 import diary.domain.SportType;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +71,7 @@ public class DiaryService {
         if (data.getKm() == null) {
             return 0.0;
         }
+        
         return data.getKm();
     }
 
@@ -88,6 +85,12 @@ public class DiaryService {
         if (data.getDuration() == null) {
             return 0.0;
         }
+
         return data.getDuration();
+
+    }
+    
+    public void deleteId(int id) throws SQLException{
+        data.delete(id);
     }
 }
