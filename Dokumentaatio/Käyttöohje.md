@@ -1,7 +1,7 @@
 # Käyttöohje
 ## Käynnistäminen
 Lataa [TrainingdiaryLopullinen.jar](https://github.com/Hilma-H/otm/releases/tag/Loppupalautus).  
-Käynnistä ohjelma käskyllä **java -jar Trainingdiary.jar**. Käynnistettäessä ensimmäistä kertaa ohjelma luo koneelle tietokannan, johon harjoitukset tallennetaan.
+Käynnistä ohjelma käskyllä **java -jar TrainingdiaryLopullinen.jar**. Käynnistettäessä ensimmäistä kertaa ohjelma luo koneelle tietokannan, johon harjoitukset tallennetaan.
 ## Näkymät
 Sovellus avautuu **"Uusi harjoitus"** -näkymään, jossa voi tallentaa uuden harjoituksen täyttämällä kentät (tällä hetkellä kenttiä EI voi jättää tyhjäksi) ja painamalla "uusi 
 harjoitus". Ylälaidan napeista voi siirtyä toisiin näkymiin.  
