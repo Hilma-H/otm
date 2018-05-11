@@ -3,12 +3,12 @@
 Treenipäiväkirjan tarkoituksena on koota yhteen treenejä ja esittää niistä tilastoja.
 ## Käyttäjät
 Sovellus on ajateltu vain yhden ihmisen käyttettäväksi yksityiseksi treenipäiväkirjaksi
-## Suunnitellut toiminnallisuudet
+## Toiminnallisuudet
 ### **Perustoiminnallisuudet:**
 * Käyttäjä voi lisätä treenin, johon täytetään päivämäärä, laji, kilometrimäärä ja kesto
 * Käyttäjä voi tarkastella listaa kaikista treeneistään
 * Käyttäjä saa tilastotietoa, jossa laskettu treenikilometrit ja käytetty aika kaikista treeneistä
-### **Jatkokehitys**
+### **Jatkokehitysideoita**
 * Treeniin merkittäisiin:
    * pvm
    * laji
