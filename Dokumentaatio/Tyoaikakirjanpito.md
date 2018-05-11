@@ -11,4 +11,8 @@
 | 24.4.| 5    | tietokanta, jar, sekvenssikaavio |
 | 25.4.| 4    | Treenien näkyminen |
 | 2.5. | 6 | Scrollbar, tilastot ja dokumentointi |
-| yht   | 32   | | 
+| 3.5 | (2) | (Koodikatselmointi)|
+| 7.5 | 3 | Käyttöliittymän muutoksia ja virheidenkorjausta|
+| 10.5 | 1 | Loppupalautuksen vaatimuksien läpikäyntiä|
+| 11.5 | x | Loppupalautus|
+| yht   | 37(39)   | | 

@@ -17,7 +17,6 @@ DiaryService on linkki käyttöliittymän ja datan tallennuksen välissä.
 
 ![alt 
 text](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Pakkauskaavio%20-%20(1).jpg) 
-tähän kuva pakkausrakenteesta
 ## Tallennus
 Ohjelman harjoitukset tallennetaan (ohjelman luomaan) paikalliseen  tietokantaan. Tietokanta on nimeltään Harjoitus ja sen sarakkeet ovat muotoa:
 (PK id integer, laji varchar(20), km float, kesto float, pvm integer)

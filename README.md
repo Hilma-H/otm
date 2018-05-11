@@ -1,5 +1,4 @@
 # OTM-Harjoitustyö
-## JavaDoc: Sovelluksessa ei ole kuin kuusi luokkaa, joista yksi on enum ja yksi on dao. Näin ollen viikon 6 vaatimus viidestä luokasta ei onnistu.
 ## Training Diary
 Tarkoituksena tehdä treenipäiväkirja, johon voi kirjata omia treenejään ja nähdä niistä erilaisia tilastoja.
 ## Dokumentaatio
