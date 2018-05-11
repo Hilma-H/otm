@@ -23,8 +23,8 @@ Ohjelman harjoitukset tallennetaan (ohjelman luomaan) paikalliseen  tietokantaan
 ## Päätoiminnallisuudet
 Päätoiminnallisuudet kuvattu sekvenssikaavioilla.
 
-### Harjoituksen luominen (kuva)
-### Tilastot (kuva)
+### Harjoituksen luominen (kuva sekvenssikaaviosta)
+### Tilastot (kuva sekvenssikaavioista)
 ## Puutteita/työn alla
 - päivämäärän tallennus järkevämmin  
 - kentät sallisivat myös tyhjäksi jättämisen (ainakin km)  
