@@ -23,8 +23,10 @@ Ohjelman harjoitukset tallennetaan (ohjelman luomaan) paikalliseen  tietokantaan
 ## Päätoiminnallisuudet
 Päätoiminnallisuudet kuvattu sekvenssikaavioilla.
 
-### Harjoituksen luominen (kuva sekvenssikaaviosta)
-### Tilastot (kuva sekvenssikaavioista)
+### Harjoituksen luominen  
+![alttext](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Harjoituksen%20luominen.png)
+### Tilastot  
+![alttext](https://github.com/Hilma-H/otm/blob/master/Dokumentaatio/Harjoituksen%20poistaminen.png)
 ## Puutteita/työn alla
 - päivämäärän tallennus järkevämmin  
 - kentät sallisivat myös tyhjäksi jättämisen (ainakin km)
